@@ -2,13 +2,13 @@ import store from '@state/store'
 
 export default [
   {
-    path: '/',
     name: 'home',
+    path: '/',
     component: () => lazyLoadView(import('@views/home')),
   },
   {
-    path: '/login',
     name: 'login',
+    path: '/login',
     component: () => lazyLoadView(import('@views/login')),
     meta: {
       beforeResolve(routeTo, routeFrom, next) {
@@ -24,8 +24,8 @@ export default [
     },
   },
   {
-    path: '/profile',
     name: 'profile',
+    path: '/profile',
     component: () => lazyLoadView(import('@views/profile')),
     meta: {
       authRequired: true,
@@ -33,8 +33,8 @@ export default [
     props: route => ({ user: store.state.auth.currentUser || {} }),
   },
   {
+    name: 'usernameProfile',
     path: '/profile/:username',
-    name: 'username-profile',
     component: () => lazyLoadView(import('@views/profile')),
     meta: {
       authRequired: true,
@@ -61,23 +61,21 @@ export default [
     props: route => ({ user: route.params.user }),
   },
   {
-    path: '/logout',
     name: 'logout',
+    path: '/logout',
     meta: {
       authRequired: true,
       beforeResolve(routeTo, routeFrom, next) {
         store.dispatch('auth/logOut')
-        const authRequiredOnPreviousRoute = routeFrom.matched.some(
-          route => route.meta.authRequired
-        )
+        const authRequiredOnPreviousRoute = routeFrom.matched.some(route => route.meta.authRequired)
         // Navigate back to previous page, or home as a fallback
         next(authRequiredOnPreviousRoute ? { name: 'home' } : { ...routeFrom })
       },
     },
   },
   {
-    path: '/404',
     name: '404',
+    path: '/404',
     component: require('@views/_404').default,
     // Allows props to be passed to the 404 page through route
     // params, such as `resource` to define what wasn't found.

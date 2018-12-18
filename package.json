@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "dev:e2e": "vue-cli-service test:e2e --mode=development",
+    "dev:watch": "vue-cli-service service --watch",
     "build": "vue-cli-service build --modern",
     "build:ci": "yarn build --report",
     "lint:eslint": "eslint --fix",
@@ -23,6 +24,7 @@
     "test:e2e": "vue-cli-service test:e2e --headless",
     "test": "run-s test:unit test:e2e",
     "test:ci": "run-s test:unit:ci test:e2e",
+    "unit": "vue-cli-service test:unit",
     "new": "hygen new",
     "docs": "vuepress dev"
   },
@@ -77,9 +79,5 @@
     "node": ">=8.9.0",
     "yarn": ">=1.0.0"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"]
 }

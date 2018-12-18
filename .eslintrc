@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "linebreak-style": "off" //Turning this off due to a TeamCity issue with line breaks
+  },
+  "globals": {
+    "driver": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": "@dude/eslint-config-dude"
+}
