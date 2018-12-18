@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "serve:dev": "vue-cli-service serve --mode=development",
+    "serve:prod": "vue-cli-service serve --mode=production",
     "dev": "vue-cli-service serve",
     "dev:e2e": "vue-cli-service test:e2e --mode=development",
-    "dev:watch": "vue-cli-service service --watch",
+    "dev:watch": "yarn serve:dev --open",
     "build": "vue-cli-service build --modern",
     "build:ci": "yarn build --report",
     "lint:eslint": "eslint --fix",
@@ -40,6 +42,7 @@
     "normalize.css": "8.0.1",
     "nprogress": "0.2.0",
     "vue": "2.5.17",
+    "vue-cli": "^2.9.6",
     "vue-meta": "1.5.5",
     "vue-router": "3.0.1",
     "vuex": "3.0.1"
