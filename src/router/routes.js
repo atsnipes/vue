@@ -5,6 +5,9 @@ export default [
     name: 'home',
     path: '/',
     component: () => lazyLoadView(import('@views/home')),
+    meta: {
+      authRequired: false,
+    },
   },
   {
     name: 'login',
