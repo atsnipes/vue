@@ -10,6 +10,14 @@ export default [
     },
   },
   {
+    name: 'paralla',
+    path: '/paralla',
+    component: () => lazyLoadView(import('@views/paralla')),
+    meta: {
+      authRequired: false,
+    },
+  },
+  {
     name: 'login',
     path: '/login',
     component: () => lazyLoadView(import('@views/login')),

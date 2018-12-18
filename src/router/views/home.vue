@@ -4,7 +4,7 @@ import Layout from '@layouts/main'
 
 export default {
   page: {
-    title: 'Home',
+    title: 'Home Biatch',
     meta: [{ name: 'description', content: appConfig.description }],
   },
   components: { Layout },

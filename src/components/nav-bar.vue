@@ -11,6 +11,10 @@ export default {
           name: 'home',
           title: 'Home',
         },
+        {
+          name: 'paralla',
+          title: 'Paralla',
+        },
       ],
       loggedInNavRoutes: [
         {
@@ -38,11 +42,13 @@ export default {
 
 <template>
   <ul :class="$style.container">
-    <NavBarRoutes :routes="persistentNavRoutes" />
+    <NavBarRoutes 
+      :routes="persistentNavRoutes" 
+    />
     <NavBarRoutes
       v-if="loggedIn"
       :routes="loggedInNavRoutes"
-    />
+    /> 
     <NavBarRoutes
       v-else
       :routes="loggedOutNavRoutes"
