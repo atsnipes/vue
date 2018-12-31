@@ -10,9 +10,25 @@ export default {
   components: { Layout },
 }
 </script>
-
 <template>
   <Layout>
+    <VApp>
+      <VToolbar>
+        <VToolbarTitle v-text="hi" />
+      </VToolbar>
+
+      <VContent>
+        <section>
+          <p>
+            sdf  
+          </p>
+        </section>
+      </VContent>
+    </VApp>
+  </Layout>
+</template>
+  <!--<template>
+ <Layout>
     <VApp light>
       <VToolbar class="white">
         <VToolbarTitle v-text="title" />
@@ -311,4 +327,4 @@ export default {
       </VContent>
     </VApp>
   </Layout>
-</template>
+</template> -->
